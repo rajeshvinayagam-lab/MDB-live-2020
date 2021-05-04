@@ -1,0 +1,9 @@
+{
+    "name": "getdataTrigger",
+    "type": "SCHEDULED",
+    "config": {
+        "schedule": "0 4/24 * * *"
+    },
+    "function_name": "getData",
+    "disabled": false
+}
