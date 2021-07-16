@@ -1,6 +1,6 @@
 
 
-# Atlas Billing & Automation
+# Atlas Billing & MongoDB Charts
 
 <img width="2277" alt="Screenshot 2021-07-16 at 09 14 05" src="https://user-images.githubusercontent.com/77750987/125917217-cae7b4ce-d5ac-40d5-973f-92ac24db8051.png">
 
