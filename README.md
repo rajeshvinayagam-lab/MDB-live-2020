@@ -35,7 +35,7 @@ The code in this repo contains one function, one trigger and some values & secre
   * An additional API key will be required to import the code in this repo into your own Realm application.
 
 # Create an API key for the Billing function
-You will need to create an API in the target organization (the one you want to gather Billing data from).
+You will need to create an API key in the target organization (the one you want to gather Billing data from).
 
 * ### Navigate to the target org.
 * ### Click on the 'Access Manager' on the left navigation bar:
