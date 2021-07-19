@@ -122,7 +122,7 @@ Select 'y' to confirm you want to repace the existing application.
   * You are now ready to use MongoDB Charts and build your first dashboards. If you need some inspiration you can have a look at [Building a MongoDB Billing Dashboard](https://www.mongodb.com/blog/post/building-a-mongodb-billing-dashboard--part-2)
  
 # Bonus
-  * I have included in the repository a pre-built dashboard `billing_charts.charts` which will give you info on your clusters, projects, SKU consumption over the last 7, 30 days and last 12 months. You will just have to [import](https://docs.mongodb.com/charts/saas/dashboards/#export-and-import-a-dashboard) the dashboard in your MongoDB Charts project.
+  * I have included in the repository a pre-built dashboard `charts_billing_template.charts` which will give you info on your clusters, projects, SKU consumption over the last 7, 30 days and last 12 months. You will just have to [import](https://docs.mongodb.com/charts/saas/dashboards/#export-and-import-a-dashboard) the dashboard in your MongoDB Charts project.
  
 # Enhancements
 Additional enhancements are possible such as:
