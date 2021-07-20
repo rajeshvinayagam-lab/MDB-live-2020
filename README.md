@@ -2,7 +2,8 @@
 
 # Atlas Billing & MongoDB Charts
 
-<img width="2277" alt="Screenshot 2021-07-16 at 09 14 05" src="https://user-images.githubusercontent.com/77750987/125917217-cae7b4ce-d5ac-40d5-973f-92ac24db8051.png">
+<img width="762" alt="Screenshot 2021-07-20 at 10 55 08" src="https://user-images.githubusercontent.com/77750987/126303881-5937fabb-d2d6-4e52-9fe0-2b14fa3bf6a5.png">
+
 
 This repository is pretty much the exact replica of [MDB-live-2020](https://github.com/rbohan/MDB-live-2020). The main difference is that we will be using the Realm CLI Version 2 and only focus on how to deploy our charts.
 If you want more context around this rep, I encourage you to have a lookg at [Tracking and Managing Your Spend on MongoDB Atlas](https://www.youtube.com/watch?v=qP-n8wnwZzI).
