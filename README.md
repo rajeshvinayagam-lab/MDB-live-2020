@@ -141,4 +141,6 @@ If there are any errors or corrections required for this repo please feel free t
 * [MongoDB API Resources](https://docs.atlas.mongodb.com/reference/api-resources/)
 * [Tracking and Managing Your Spend on MongoDB Atlas](https://www.youtube.com/watch?v=qP-n8wnwZzI)
 * [Building a MongoDB Billing Dashboard](https://www.mongodb.com/blog/post/building-a-mongodb-billing-dashboard--part-2)
+* [MongoDB University: Introduction to MongoDB Charts](https://university.mongodb.com/courses/A131/about)
+
 
