@@ -8,6 +8,9 @@
 This repository is pretty much the exact replica of [MDB-live-2020](https://github.com/rbohan/MDB-live-2020). The main difference is that we will be using the Realm CLI Version 2 and only focus on how to deploy our charts.
 If you want more context around this rep, I encourage you to have a lookg at [Tracking and Managing Your Spend on MongoDB Atlas](https://www.youtube.com/watch?v=qP-n8wnwZzI).
  
+ # Video
+[![IMAGE ALT TEXT HERE](http://i3.ytimg.com/vi/1sD0MBuGecQ/hqdefault.jpg)](https://www.youtube.com/watch?v=1sD0MBuGecQ)
+ 
 
 # Overview
 The code in this repo contains one function, one trigger and some values & secrets as follows:
