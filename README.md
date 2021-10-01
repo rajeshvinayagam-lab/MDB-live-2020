@@ -70,7 +70,7 @@ To import the code in this repo into your own Realm app you will need an additio
     * Log in via the Realm CLI using the details of the key you just created above (Project level): 
      `realm-cli login --api-key="<my api key>" --private-api-key="<my private api key>"`
      
-    * Run the following to create a new Stitch App:
+    * Run the following to create a new Realm App:
      `realm-cli import`
   
 * ### Answer the questions e.g.:
