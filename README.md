@@ -66,11 +66,10 @@ To import the code in this repo into your own Realm app you will need an additio
 * ### [Download the Realm CLI Client](https://docs.mongodb.com/realm/deploy/realm-cli-reference/#installation)
   * Follow the instructions on this page to download the Realm CLI for your platform.
 * ### [Import the code into your Realm App](https://docs.mongodb.com/realm/deploy/realm-cli-reference/#import-an-application)
-  * From the root of the local github clone:
-    * Log in via the Realm CLI using the details of the key you just created above (Project level): 
+  * ### From the root of the local github clone:
+   * Log in via the Realm CLI using the details of the key you just created above (Project level): 
      `realm-cli login --api-key="<my api key>" --private-api-key="<my private api key>"`
-     
-    * Run the following to create a new Realm App:
+   * Run the following to create a new Realm App:
      `realm-cli import`
   
 * ### Answer the questions e.g.:
