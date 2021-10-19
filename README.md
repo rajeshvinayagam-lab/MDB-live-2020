@@ -91,7 +91,7 @@ While the previous command failed, it did create a new Realm App. We will just n
 
 # Redeploy your app
 ### Now that we have our Secrets in place we can redeploy our App:
- * `realm-cli import --remote "billing"`
+ * `realm-cli push --remote "billing"`
 
 Select 'y' to confirm you want to repace the existing application.
 
