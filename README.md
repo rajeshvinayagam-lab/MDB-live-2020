@@ -82,7 +82,7 @@ To import the code in this repo into your own Realm app you will need an additio
      **"failed to import app: error: error validating Value: auto-password: could not find secret "auto-passwordSecret"**
 
 # Create Secrets
-While the previous command failed, it did create a new Realm App. We will just need to create the missing Secrets which are our Organisation ID, Public-Key and Pribate-Key (to run our `getData` function).
+While the previous command failed, it did create a new Realm App. We will just need to create the missing Secrets which are our Organisation ID, Public-Key and Private-Key (to run our `getData` function).
 
  * Run the following to create a new Realm App:
    * `realm-cli secrets create -n billing-orgSecret -v <orgId>`
