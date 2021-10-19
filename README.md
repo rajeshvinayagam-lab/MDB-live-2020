@@ -77,52 +77,32 @@ To import the code in this repo into your own Realm app you will need an additio
   * *? App name:* **billing**
   * *? App Location:* **[US-VA]**
   * *? App Deployment Model:* **LOCAL**
+  * *? App Environment* **production**
    * *Note: this is expected to fail with an error message similar to the follow, as some Secrets have not yet been created:*
      **"failed to import app: error: error validating Value: auto-password: could not find secret "auto-passwordSecret"**
 
 # Create Secrets
-While the previous command failed, it did create a new Realm App. Navigate back to the Realm App page (refresh if required) and select the new billing App.
+While the previous command failed, it did create a new Realm App. We will just need to create the missing Secrets which are our Organisation ID, Public-Key and Pribate-Key (to run our `getData` function).
 
-With the Realm App selected we can create the missing Secrets:
-
-* ### Switch to 'Values' on the left navigation bar
-  * Create a new value.
-  * Choose a Secret type.
-  
-* ### Create the following Secrets mapped to the values from above:
-  * `billing-orgSecret`: the ID of the Org we want to retrieve the Billing data for.
-  * `billing-usernameSecret`: the Public API key details for that Org.
-  * `billing-passwordSecret`: the Private API key details for that Org.
+ * Run the following to create a new Realm App:
+   * `realm-cli secrets create -n billing-orgSecret -v <orgId>`
+   * `realm-cli secrets create -n billing-usernameSecret -v <publicApiKey>`
+   * `realm-cli secrets create -n billing-passwordSecret -v <privateApiKey>`
 
 # Redeploy your app
 ### Now that we have our Secrets in place we can redeploy our App:
-`realm-cli import --remote "<AppID>"`
+ * `realm-cli import --remote "billing"`
 
 Select 'y' to confirm you want to repace the existing application.
 
-# Connect to your Atlas cluster:
-
-* ### Now that the App has been redeployed, verify that the App is linked to your Atlas cluster:
-  * Switch to 'Linked Data Sources' on the left navigation bar.
-  * Ensure the 'Atlas Clusters' entry maps to your Atlas cluster from above.
-  * Your Realm Service name is `mongodb-atlas`.
-  * All other entries can be left as is.
-  * Click 'Save' to save your choice.
-  * Click the 'Review & Deploy Changes' option from the new blue bar at the top of the screen.
-  * Verify the changes in the resulting dialog and click 'Deploy' to deploy and make live your changes.
-  * Now that we've deployed our code you can test it interactively.  
-
-* ### Navigate to 'Functions' from the left navigation bar.
-  * Select the `getData` function.
-  * Click the 'Run' button at the bottom of the screen.
-  * All going well, the function should complete successfully and populate the billingdata collection in the billing database of your Atlas cluster.
+# Run the `getData` function
+### Now that our function, trigger and Secrets are up to date, we will need to run the function a first time (so we don't have to wait for the trigger to run)
+ * `realm-cli function run —name "getData"`
 
 # Double Check
   * If anthing goes wrong, check the error message and make sure you have entered the values of the Secrets correctly (you can update them at any stage by navigating to Values & Secrets on the left navigation bar, choosing the Secrets tab and updating each entry as required).
-  * Check if your 'Service Name' (in your Linked Data Source settings) is `mongodb-atlas`.
 
 # Next Steps
-  * Activate you trigger getdataTrigger to retrieve automatically the billing data using the getdata function.
   * You are now ready to use MongoDB Charts and build your first dashboards. If you need some inspiration you can have a look at [Building a MongoDB Billing Dashboard](https://www.mongodb.com/blog/post/building-a-mongodb-billing-dashboard--part-2)
  
 # Bonus
