@@ -35,6 +35,10 @@ The code in this repo contains one function, one trigger and some values & secre
 * You will need the following before you can use this code:
   * A [MongoDB Atlas cluster](https://www.mongodb.com/cloud/atlas) to gather the billing data we collect (a M0 will do). (To minimize network data transfer, select AWS, in the 'us-east-1', 'us-west-2', 'eu-east-1' or 'ap-southeast-2' regions).
   * A local clone of this repo which you will import into your MongoDB Realm application.
+  
+* [Download the Realm CLI Client](https://docs.mongodb.com/realm/deploy/realm-cli-reference/#installation)
+  * Unless you want to build the application through the Realm UI you will have to install the Realm Cli to either run the command or the script `runRealmCli.sh`. You will need to have [npm](https://docs.npmjs.com/)installed on your machine to run installation. 
+* The name of the cluster you will create to store the billing data has be called "billing" if you want to use another name you can modify the name of the cluster in the `realm_config.json` file.
 
 # Setup
 * To deploy the code in this repo you'll need several API Keys.
