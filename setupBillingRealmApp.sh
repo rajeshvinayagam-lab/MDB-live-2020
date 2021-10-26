@@ -52,7 +52,18 @@ echo
 
 echo "Thanks....."
 
-sed -ie "s/"billing"/$clusterName/g" ./data_sources/mongodb-atlas/config.json
+#Rewrite the config.json file in data source so we can select a different cluster
+config='{
+    "name": "mongodb-atlas",
+    "type": "mongodb-atlas",
+    "config": {
+        "clusterName": "'$clusterName'",
+        "readPreference": "primary",
+        "wireProtocolEnabled": false
+    },
+    "version": 1
+}'
+echo "$config" > ./data_sources/mongodb-atlas/config.json
 
 realm-cli login --api-key="$publicKeyProject" --private-api-key="$privateKeyProject"
 
