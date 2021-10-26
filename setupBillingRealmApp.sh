@@ -69,6 +69,8 @@ realm-cli login --api-key="$publicKeyProject" --private-api-key="$privateKeyProj
 
 realm-cli import --yes 
 
+echo "We will create the missing secrets now: ..."
+
 realm-cli secrets create -n billing-orgSecret -v $orgID
 realm-cli secrets create -n billing-usernameSecret -v $publicKeyOrg
 realm-cli secrets create -n billing-passwordSecret -v $privateKeyOrg
