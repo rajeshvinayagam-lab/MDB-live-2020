@@ -14,43 +14,43 @@ echo "
 "
 
 
-echo STEP I -1/1- Provide your organisation ID:
+echo "STEP I -1/1- Provide your organisation ID:"
 read orgID
 echo
 echo "***************************************************************"
 echo
 
-echo STEP II -1/2- Provide the Public API Key at the  project level:
+echo "STEP II -1/2- Provide the Public API Key at the  project level:"
 read publicKeyProject
 echo
 echo "***************************************************************"
 echo
 
-echo STEP II -2/2- Provide the Private API Key at the  project level:
+echo "STEP II -2/2- Provide the Private API Key at the  project level:"
 read privateKeyProject
 echo
 echo "***************************************************************"
 echo
 
-echo STEP III -1/2- Provide the Public API key at the  org level:
+echo "STEP III -1/2- Provide the Public API key at the  org level:"
 read publicKeyOrg
 echo
 echo "***************************************************************"
 echo
 
-echo STEP III -2/2- Provide the Private API key at the  org level:
+echo "STEP III -2/2- Provide the Private API key at the  org level:"
 read privateKeyOrg
 echo
 echo "***************************************************************"
 echo
 
-echo STEP IV -1/1- What is the name of the cluster you will store the billing data?
+echo "STEP IV -1/1- What is the name of the cluster you will store the billing data?"
 read clusterName
 echo
 echo "***************************************************************"
 echo
 
-echo Thanks.....
+echo "Thanks....."
 
 sed -ie "s/"billing"/$clusterName/g" ./data_sources/mongodb-atlas/config.json
 
