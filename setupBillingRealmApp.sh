@@ -14,43 +14,43 @@ echo "
 "
 
 
-echo "STEP I -1/1- Provide your organisation ID:"
-read orgID
-echo
-echo "***************************************************************"
-echo
-
-echo "STEP II -1/2- Provide the Public API Key at the  project level:"
+echo "STEP I -1/2- Provide the Public API Key at the  project level:"
 read publicKeyProject
 echo
 echo "***************************************************************"
 echo
 
-echo "STEP II -2/2- Provide the Private API Key at the  project level:"
+echo "STEP I -2/2- Provide the Private API Key at the  project level:"
 read privateKeyProject
 echo
 echo "***************************************************************"
 echo
 
-echo "STEP III -1/2- Provide the Public API key at the  org level:"
+echo "STEP II -1/2- Provide the Public API key at the  org level:"
 read publicKeyOrg
 echo
 echo "***************************************************************"
 echo
 
-echo "STEP III -2/2- Provide the Private API key at the  org level:"
+echo "STEP II -2/2- Provide the Private API key at the  org level:"
 read privateKeyOrg
 echo
 echo "***************************************************************"
 echo
 
-echo "STEP IV -1/1- What is the name of the cluster you will store the billing data?"
+echo "STEP III -1/1- What is the name of the cluster you will store the billing data?"
 read clusterName
 echo
 echo "***************************************************************"
 echo
 
 echo "Thanks....."
+
+# Obtain Organization ID and Cluster info from Atlas API
+#resp=$(curl -s https://cloud.mongodb.com/api/atlas/v1.0/clusters --digest -u $publicKeyProject:$privateKeyProject)
+#orgId=$(grep -Po "\"orgId\":\"\K.*?(?=\")" <<< $resp)
+#groupId=$(grep -Po "\"groupId\":\"\K.*?(?=\")" <<< $resp)
+orgID=$(curl -s https://cloud.mongodb.com/api/atlas/v1.0 --digest -u $publicKeyOrg:$privateKeyOrg | sed -e 's/[{}]/''/g' | awk -v RS=',"' -F/ '/^href/ {print $8}')
 
 #Rewrite the config.json file in data source so we can select a different cluster
 config='{
