@@ -13,7 +13,19 @@ echo "
  */
 "
 
+echo "This script configures a MongoDB Realm app which extracts data from the Atlas Billing API"
+echo "and writes it to an Atlas Cluster"
+echo 
+echo "Before you run this script, make sure you have:"
+echo "1. Created a new MongoDB Atlas project for your billing app"
+echo "2. Created a new cluster inside that project for storing billing data"
+echo "3. Created an API Key inside that project, and recorded the public and private key details"
+echo "4. Created an API Key for your Organization and recorded the public and private key details"
+echo "5. Installed dependencies for this script: node, mongodb-realm-cli"
+echo "For more details on these steps, see the README.md file."
+echo
 
+# Prompt for API Keys
 echo "STEP I -1/2- Provide the Public API Key at the  project level:"
 read publicKeyProject
 echo
@@ -65,20 +77,29 @@ config='{
 }'
 echo "$config" > ./data_sources/mongodb-atlas/config.json
 
+# Import the Realm app
 realm-cli login --api-key="$publicKeyProject" --private-api-key="$privateKeyProject"
-
 realm-cli import --yes 
 
+# Write secrets to Realm app
 echo "We will create the missing secrets now: ..."
-
 realm-cli secrets create -n billing-orgSecret -v $orgID
 realm-cli secrets create -n billing-usernameSecret -v $publicKeyOrg
 realm-cli secrets create -n billing-passwordSecret -v $privateKeyOrg
-
 realm-cli push --remote "billing" -y
 
+# Run functions to retrieve billing data for the first time
 echo "Please wait a few seconds (30s) before we run the function ..."
 
 sleep 30
 
 realm-cli function run --name "getData"
+
+
+# Next Steps
+echo
+echo "Setup Complete! Please log into Atlas and verify that data has been loaded into the cluster."
+echo "To visualize the billing data on a dashboard:"
+echo "1. Activate Charts in your Atlas project"
+echo "2. Add Data Sources for your billing collections"
+echo "3. Import the dashboard from the included file 'charts_billing_template.charts'"
