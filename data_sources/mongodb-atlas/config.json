@@ -2,7 +2,7 @@
     "name": "mongodb-atlas",
     "type": "mongodb-atlas",
     "config": {
-        "clusterName": "billing",
+        "clusterName": "federation-demo",
         "readPreference": "primary",
         "wireProtocolEnabled": false
     },
